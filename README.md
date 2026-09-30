@@ -1,16 +1,50 @@
-# React + Vite
+# Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live demo:** https://wemovieapp.netlify.app/
 
-Currently, two official plugins are available:
+![Movie Explorer screenshot](screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A movie browser built with React and React Router. It shows popular movies from The Movie Database (TMDB), lets you search by title, and has a separate favourites page.
 
-## React Compiler
+## Features
+- Popular movies on the home page
+- Search by title
+- Favourites page, with state shared through the Context API
+- Loading and error states
+- Responsive dark layout
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
+React 19, React Router 7, Context API, Vite, TMDB API, CSS
 
-## Expanding the ESLint configuration
+## Run locally
+1. Get a free API key from https://www.themoviedb.org/settings/api
+2. Clone the repo and install dependencies:
+```bash
+   npm install
+```
+3. Create a `.env` file in the project root:
+```
+   VITE_TMDB_API_KEY=your_api_key_here
+```
+4. Start the app:
+```bash
+   npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project structure
+```
+src/pages        Home and Favorites pages
+src/components   Navbar and MovieCard
+src/contexts     favourites state (Context API)
+src/services     TMDB API calls
+```
+
+## What I learned
+- Client-side routing with React Router
+- Sharing state across pages with the Context API
+- Building a search flow with loading and error states
+
+## What I would improve next
+- Save favourites between visits
+- Add user accounts and a small backend, so the API key stays off the browser
+- Add pagination and a movie details page
